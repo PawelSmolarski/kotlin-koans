@@ -20,5 +20,6 @@ public class JavaCode6 extends JavaCode {
         public int getAge() {
             return age;
         }
+
     }
 }
