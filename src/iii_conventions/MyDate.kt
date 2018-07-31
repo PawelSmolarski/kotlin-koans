@@ -20,6 +20,10 @@ enum class TimeInterval {
     YEAR
 }
 
+class RepeatedTimeInterval(val timeInterval: TimeInterval, val number: Int)
+
+operator fun TimeInterval.times(number: Int) = RepeatedTimeInterval(this, number)
+
 class DateRange(override val start: MyDate, override val endInclusive: MyDate) : ClosedRange<MyDate>, Iterable<MyDate> {
     override fun iterator(): Iterator<MyDate> {
         return MyDateIterator(start, endInclusive)
